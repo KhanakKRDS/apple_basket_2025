@@ -1,7 +1,7 @@
 # Breakfast
 Boiled eggs
 <br>
-froot loop
+Pancakes
 
 # Lunch
 Chicken Sandwich
@@ -10,3 +10,4 @@ PB + J
 # Dinner
 Garlic Butter Salmon
 <br>
+Steak and potatoes
