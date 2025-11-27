@@ -2,11 +2,14 @@
 Boiled eggs
 <br>
 Pancakes
+<br>
+Avocado Toast
 
 # Lunch
 Chicken Sandwich
 <br>
-PB + J
+Pasta
+
 # Dinner
 Garlic Butter Salmon
 <br>
