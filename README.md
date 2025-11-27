@@ -9,8 +9,10 @@ Avocado Toast
 Chicken Sandwich
 <br>
 Pasta
+<br>
+Pizza
 
 # Dinner
-Garlic Butter Salmon
+Chicken Quesadillas
 <br>
 Steak and potatoes
