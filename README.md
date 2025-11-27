@@ -1,5 +1,5 @@
 # Breakfast
-Boiled eggs
+Eggs
 <br>
 Pancakes
 <br>
@@ -8,7 +8,7 @@ Avocado Toast
 # Lunch
 Chicken Sandwich
 <br>
-Pasta
+Egg Rolls
 
 # Dinner
 Garlic Butter Salmon
