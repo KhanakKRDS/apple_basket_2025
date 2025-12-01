@@ -14,6 +14,7 @@ func _physics_process(delta: float) -> void:
 		position.y = 0
 		
 	move_and_slide()
+	
 func _multiple_apples():
 	var new_apple =  apple
 	var random_x = randf_range(min_x, max_x)
