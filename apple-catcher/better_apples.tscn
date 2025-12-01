@@ -6,11 +6,11 @@
 [ext_resource type="Script" uid="uid://g2dj8qlwhgwc" path="res://better_apple.gd" id="3_glxhr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mscbv"]
-radius = 53.1507
+radius = 42.520584
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glxhr"]
-radius = 83.0
-height = 166.0
+radius = 55.96112
+height = 214.35492
 
 [node name="BetterApples" type="Node2D"]
 
@@ -24,7 +24,7 @@ scale = Vector2(0.162109, 0.158203)
 texture = ExtResource("2_8q4iw")
 
 [node name="apple-collison" type="CollisionShape2D" parent="apple"]
-position = Vector2(-1, 1)
+position = Vector2(-3, 5)
 shape = SubResource("CircleShape2D_mscbv")
 
 [node name="basket" type="Area2D" parent="."]
@@ -37,7 +37,8 @@ scale = Vector2(0.445801, 0.343262)
 texture = ExtResource("1_n6xs7")
 
 [node name="basket_collision" type="CollisionShape2D" parent="basket"]
-position = Vector2(0, 6)
+position = Vector2(1, 37)
+rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
 
 [node name="score" type="Label" parent="."]
