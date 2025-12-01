@@ -71,7 +71,7 @@ position = Vector2(6.49997, 3)
 shape = SubResource("RectangleShape2D_vio3b")
 
 [node name="stone" type="CharacterBody2D" parent="."]
-position = Vector2(553, 51)
+position = Vector2(675, 69)
 
 [node name="stone_image" type="Sprite2D" parent="stone"]
 position = Vector2(7.62939e-06, -2.86102e-06)
@@ -79,7 +79,7 @@ scale = Vector2(0.104004, 0.133503)
 texture = ExtResource("6_vio3b")
 
 [node name="stone-collision" type="CollisionShape2D" parent="stone"]
-position = Vector2(1.5, -2)
+position = Vector2(2, -5)
 shape = SubResource("RectangleShape2D_82mcb")
 
 [connection signal="body_entered" from="basket" to="basket" method="_on_body_entered"]
