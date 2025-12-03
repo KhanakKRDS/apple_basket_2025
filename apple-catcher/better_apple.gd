@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-<<<<<<< HEAD
 var score_label: Label
 var min_x = 20 # position of apples
 var max_x = 1150 # position of apples
@@ -59,5 +58,3 @@ func _multiple_apples(num_apples):
 func reset_apple():
 	position.x = randi_range(0, 1100)
 	position.y = 0
-
-=======

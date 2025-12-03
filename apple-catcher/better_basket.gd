@@ -4,13 +4,11 @@ var score_label: Label
 
 
 
-<<<<<<< HEAD
-=======
 func _ready(): # runs only one time
 	score_label = get_node("/root/BetterApples/score") # path of the score
 	#body_entered.connect(_on_body_entered)
 	
->>>>>>> 49474fd541609f2c6863c900f37767bc1a0eb89c
+
 func _process(delta):
 	if Input.is_key_pressed(KEY_LEFT):
 		position.x -= 7
