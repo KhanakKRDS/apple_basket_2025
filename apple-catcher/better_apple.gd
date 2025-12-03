@@ -1,11 +1,23 @@
 extends CharacterBody2D
 
-func _ready():
-	velocity = Vector2(0, 200) # x and y position
+var score_label: Label
 
-func _physics_process(delta: float) -> void:
-	if position.y >600:
-		position.x = randi_range(0, 1100)
-		position.y = 0
-		
+func _ready():
+	score_label = get_node("/root/BetterApples/score")
+
+func _physics_process(delta):
+	# Move the apple down
+	velocity = Vector2(0, 200)  # Use the built-in velocity
 	move_and_slide()
+
+	# Missed apple
+	if position.y > 600:
+		reset_apple()
+		# Decrease score if missed
+		var score = int(score_label.text)
+		score = max(score - 1, 0)  # prevent negative score
+		score_label.text = str(score)
+
+func reset_apple():
+	position.x = randi_range(0, 1100)
+	position.y = 0
