@@ -5,6 +5,7 @@ var score_label
 
 func _ready(): # runs only one time
 	score_label = get_node("/root/BetterApples/score") # path of the score
+	#body_entered.connect(_on_body_entered)
 	
 func _process(delta):
 	if Input.is_key_pressed(KEY_LEFT):
