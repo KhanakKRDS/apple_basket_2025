@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://e8rfwr6rihsm"]
+[gd_scene load_steps=13 format=3 uid="uid://e8rfwr6rihsm"]
 
 [ext_resource type="Script" uid="uid://yawfgwt04vwx" path="res://better_basket.gd" id="1_8q4iw"]
 [ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="1_n6xs7"]
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="2_8q4iw"]
+[ext_resource type="Script" uid="uid://k56alnf8dsom" path="res://star.gd" id="3_ba8uk"]
 [ext_resource type="Script" uid="uid://g2dj8qlwhgwc" path="res://better_apple.gd" id="3_glxhr"]
 [ext_resource type="Texture2D" uid="uid://u127ur3hfvbf" path="res://star.png" id="5_mscbv"]
 [ext_resource type="Script" uid="uid://b24ajl4rwcs7j" path="res://stone.gd" id="6_82mcb"]
@@ -48,6 +49,7 @@ vertical_alignment = 1
 
 [node name="star" type="CharacterBody2D" parent="."]
 position = Vector2(337, -68)
+script = ExtResource("3_ba8uk")
 
 [node name="star_image" type="Sprite2D" parent="star"]
 position = Vector2(7, 3.5)
