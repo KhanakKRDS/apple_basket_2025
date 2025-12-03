@@ -60,6 +60,9 @@ texture = ExtResource("5_mscbv")
 position = Vector2(6.49997, 3)
 shape = SubResource("RectangleShape2D_vio3b")
 
+[node name="Timer" type="Timer" parent="star"]
+wait_time = 30.0
+
 [node name="stone" type="CharacterBody2D" parent="."]
 position = Vector2(526, -67)
 script = ExtResource("6_82mcb")
@@ -87,4 +90,5 @@ position = Vector2(1, 37)
 rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
 
+[connection signal="timeout" from="star/Timer" to="star" method="_on_timer_timeout"]
 [connection signal="body_entered" from="basket" to="basket" method="_on_body_entered"]
