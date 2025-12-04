@@ -64,6 +64,9 @@ texture = ExtResource("5_mscbv")
 position = Vector2(6.49997, 3)
 shape = SubResource("RectangleShape2D_vio3b")
 
+[node name="Timer" type="Timer" parent="star"]
+wait_time = 30.0
+
 [node name="stone" type="CharacterBody2D" parent="."]
 position = Vector2(526, -67)
 script = ExtResource("6_82mcb")

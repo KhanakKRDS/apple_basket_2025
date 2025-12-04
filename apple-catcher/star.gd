@@ -4,6 +4,7 @@ var min_x = 0 # position of stars
 var max_x = 1152 # position of stars
 var num_stars = 2 #number of stars visible on screen at a time
 var new_stars = [] # stores sll the new stars made
+var time = Timer # 30s timer
 
 
 func _ready():
@@ -43,3 +44,7 @@ func _multiple_stars(num_stars):
 		new_stars.append(star)
 		var basket = get_node("basket")
 		star.connect("body_entered", Callable(basket, "_on_body_entered"))
+
+
+func _on_timer_timeout() -> void:
+	pass
