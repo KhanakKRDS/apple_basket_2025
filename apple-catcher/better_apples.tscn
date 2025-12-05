@@ -24,6 +24,16 @@ height = 214.35492
 
 [node name="BetterApples" type="Node2D"]
 
+[node name="score" type="Label" parent="."]
+offset_right = 115.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0.941176, 0.866667, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.945098, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="apple" type="CharacterBody2D" parent="."]
 position = Vector2(182, -62)
 script = ExtResource("3_glxhr")
@@ -36,16 +46,6 @@ texture = ExtResource("2_8q4iw")
 [node name="apple_collison" type="CollisionShape2D" parent="apple"]
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_mscbv")
-
-[node name="score" type="Label" parent="."]
-offset_right = 115.0
-offset_bottom = 44.0
-theme_override_colors/font_color = Color(0, 0.941176, 0.866667, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0.945098, 1)
-theme_override_font_sizes/font_size = 40
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="star" type="CharacterBody2D" parent="."]
 position = Vector2(337, -68)
@@ -61,7 +61,8 @@ position = Vector2(6.49997, 3)
 shape = SubResource("RectangleShape2D_vio3b")
 
 [node name="Timer" type="Timer" parent="star"]
-wait_time = 30.0
+wait_time = 120.0
+autostart = true
 
 [node name="stone" type="CharacterBody2D" parent="."]
 position = Vector2(526, -67)
