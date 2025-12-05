@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://y41j2jm0enf5"]
+[gd_scene load_steps=8 format=3 uid="uid://y41j2jm0enf5"]
 
 [ext_resource type="Script" uid="uid://d3ld60h7krcob" path="res://start_screen.gd" id="1_vdywr"]
 [ext_resource type="FontFile" uid="uid://c886uyeo3movt" path="res://Cocana-ExtrudeRight.otf" id="2_cdgt5"]
 [ext_resource type="FontFile" uid="uid://cukpq3oonvk1n" path="res://Howdybun.ttf" id="2_pevhg"]
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="3_l67vj"]
 [ext_resource type="Script" uid="uid://ddoetalup5xb3" path="res://button.gd" id="5_076lj"]
+[ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="6_cdgt5"]
+[ext_resource type="Script" uid="uid://juqlkgukldc3" path="res://tutbutton.gd" id="7_l67vj"]
 
 [node name="Start screen" type="Node2D"]
 script = ExtResource("1_vdywr")
@@ -12,11 +14,12 @@ script = ExtResource("1_vdywr")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1151.0
 offset_bottom = 647.0
+color = Color(0.99969536, 0.99969536, 0.99969536, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 113.0
+offset_left = 116.0
 offset_top = 7.0
-offset_right = 1032.0
+offset_right = 1035.0
 offset_bottom = 195.0
 theme_override_colors/font_color = Color(1.0006096, 0.12951833, 0.2433095, 1)
 theme_override_fonts/font = ExtResource("2_cdgt5")
@@ -24,16 +27,46 @@ theme_override_font_sizes/font_size = 150
 text = "Apple Catcher"
 
 [node name="Apple" type="Sprite2D" parent="."]
-position = Vector2(566.00006, 241.00002)
-scale = Vector2(0.21484375, 0.25)
+position = Vector2(583.00006, 260.00003)
+scale = Vector2(0.123046964, 0.14062506)
 texture = ExtResource("3_l67vj")
+
+[node name="Apple2" type="Sprite2D" parent="."]
+position = Vector2(541, 263)
+rotation = -0.8222111
+scale = Vector2(0.11883181, 0.12606475)
+texture = ExtResource("3_l67vj")
+
+[node name="WickerBasket" type="Sprite2D" parent="."]
+position = Vector2(567, 257)
+scale = Vector2(0.2578125, 0.20703131)
+texture = ExtResource("6_cdgt5")
 
 [node name="start button" type="Button" parent="."]
 offset_left = 458.0
-offset_top = 373.0
+offset_top = 331.0
 offset_right = 673.0
-offset_bottom = 454.0
+offset_bottom = 412.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 52
 text = "START"
 script = ExtResource("5_076lj")
+
+[node name="credits button" type="Button" parent="."]
+offset_left = 458.0
+offset_top = 427.0
+offset_right = 673.0
+offset_bottom = 508.0
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 52
+text = "CREDITS"
+
+[node name="tutorial button" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 523.0
+offset_right = 680.0
+offset_bottom = 604.0
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 52
+text = "TUTORIAL"
+script = ExtResource("7_l67vj")
