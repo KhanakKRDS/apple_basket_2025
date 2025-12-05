@@ -42,4 +42,5 @@ func _multiple_stones(num_stones):
 		add_child(stone)
 		new_stones.append(stone)
 		var basket = get_node("basket")
+		stone.connect("body_entered", Callable(stone, "_on_body_entered"))
 		stone.connect("body_entered", Callable(basket, "_on_body_entered"))

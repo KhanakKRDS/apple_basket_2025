@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
+var score_label: Label
 var min_x = 20 # position of apples
 var max_x = 1150 # position of apples
 var num_apples = 5 #number of apples visible on screen at a time
 var new_apples = [] # stores sll the new apples made
 
-
+func _ready_():
+	score_label = get_node("/root/BetterApples/score")
 func _ready():
 	_multiple_apples(num_apples)
 	
@@ -43,3 +45,16 @@ func _multiple_apples(num_apples):
 		new_apples.append(apple)
 		var basket = get_node("basket")
 		apple.connect("body_entered", Callable(basket, "_on_body_entered"))
+
+
+	# Missed apple
+	if position.y > 600:
+		reset_apple()
+		# Decrease score if missed
+		var score = int(score_label.text)
+		score = max(score - 1, 0)  # prevent negative score
+		score_label.text = str(score)
+
+func reset_apple():
+	position.x = randi_range(0, 1100)
+	position.y = 0
