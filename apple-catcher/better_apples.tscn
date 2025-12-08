@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://e8rfwr6rihsm"]
 
-[ext_resource type="Script" uid="uid://yawfgwt04vwx" path="res://better_basket.gd" id="1_8q4iw"]
+[ext_resource type="Script" uid="uid://c3savlk0yywr4" path="res://apple.gd" id="1_82mcb"]
 [ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="1_n6xs7"]
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="2_8q4iw"]
 [ext_resource type="Script" uid="uid://k56alnf8dsom" path="res://star.gd" id="3_ba8uk"]
-[ext_resource type="Script" uid="uid://g2dj8qlwhgwc" path="res://better_apple.gd" id="3_glxhr"]
 [ext_resource type="Texture2D" uid="uid://u127ur3hfvbf" path="res://star.png" id="5_mscbv"]
 [ext_resource type="Script" uid="uid://b24ajl4rwcs7j" path="res://stone.gd" id="6_82mcb"]
 [ext_resource type="Texture2D" uid="uid://c7j3dc3f8yh4i" path="res://stone.png" id="6_vio3b"]
+[ext_resource type="Script" uid="uid://dxcks0p0ilrbb" path="res://basket.gd" id="7_ba8uk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ba8uk"]
 radius = 403.39868
@@ -23,7 +23,6 @@ radius = 55.96112
 height = 214.35492
 
 [node name="BetterApples" type="Node2D"]
-script = ExtResource("3_glxhr")
 
 [node name="score" type="Label" parent="."]
 offset_right = 115.0
@@ -37,6 +36,7 @@ vertical_alignment = 1
 
 [node name="apple" type="CharacterBody2D" parent="."]
 position = Vector2(182, -62)
+script = ExtResource("1_82mcb")
 
 [node name="apple_image" type="Sprite2D" parent="apple"]
 position = Vector2(-2.49998, 5.50002)
@@ -80,7 +80,7 @@ shape = SubResource("RectangleShape2D_82mcb")
 
 [node name="basket" type="Area2D" parent="."]
 position = Vector2(201, 555)
-script = ExtResource("1_8q4iw")
+script = ExtResource("7_ba8uk")
 
 [node name="basket_image" type="Sprite2D" parent="basket"]
 position = Vector2(3.12503, 3.87497)
@@ -92,4 +92,5 @@ position = Vector2(1, 37)
 rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
 
+[connection signal="timeout" from="star/Timer" to="star" method="_on_timer_timeout"]
 [connection signal="body_entered" from="basket" to="basket" method="_on_body_entered"]

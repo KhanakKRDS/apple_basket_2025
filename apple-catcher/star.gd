@@ -11,6 +11,8 @@ var star = 0
 
 func _ready():
 	_multiple_stars(num_stars)
+	timer.wait_time = 120
+	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 	power_up.visible = false # starts with false
 
@@ -55,10 +57,6 @@ func _multiple_stars(num_stars):
 
 #visbility of the star(power up)	
 func _on_timer_timeout() -> void:
-	if power_up.visible == true:
-		power_up.show()
+	power_up.visible = true
 		
-
-	else:
-		power_up.hide()
 		

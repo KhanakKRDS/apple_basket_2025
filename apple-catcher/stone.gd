@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var min_x = 0 # position of stones
 var max_x = 1152 # position of stones
-var num_stones = 1 #number of stones visible on screen at a time
+var num_stones = 3 #number of stones visible on screen at a time
 var new_stones = [] # stores sll the new stones made
 
 

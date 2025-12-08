@@ -3,7 +3,7 @@ extends Node2D
 var score_label: Label
 var min_x = 20 # position of apples
 var max_x = 1150 # position of apples
-var num_apples = 2 #number of apples visible on screen at a time
+var num_apples = 5 #number of apples visible on screen at a time
 var new_apples = [] # stores sll the new apples made
 
 func _ready_():
