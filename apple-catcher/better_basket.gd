@@ -1,7 +1,6 @@
 extends Area2D
-
 var score_label: Label
-
+var score = 0
 
 
 func _ready(): # runs only one time
@@ -16,9 +15,6 @@ func _process(delta):
 		position.x += 7
 
 func _on_body_entered(body: Node) -> void:
-	# Only reset apple if method exists
-	if body.has_method("reset_apple"):
-		var score = int(score_label.text)
-		score += 1
-		score_label.text = str(score)
-		body.reset_apple()
+	score += 1
+	score_label.text = str(score)
+	
