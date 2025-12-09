@@ -40,6 +40,7 @@ func _multiple_apples(num_apples):
 			
 			#apple's position and initial velocity
 			apple.position = Vector2(randf_range(min_x, max_x), randf_range(0,600)) 
+			print(apple.position)
 			apple.velocity = Vector2(0, 200)
 		
 			#connecting to increase the score
