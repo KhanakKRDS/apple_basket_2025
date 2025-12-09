@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	# Missed apple
-	if position.y > 600:
+	if position.y > 680:
 		reset_apple()
 		# Decrease score if missed
 		var score = int(score_label.text)

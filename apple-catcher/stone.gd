@@ -15,7 +15,7 @@ func _physics_process(delta: float) -> void:
 		stone.move_and_slide()
 		
 		#resets the stone to zero if the stone is outside the screen
-		if stone.position.y >648:
+		if stone.position.y >680:
 			stone.position.x = randf_range(min_x, max_x)
 			stone.position.y = 0
 	
