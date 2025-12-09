@@ -11,10 +11,11 @@ var star = 0
 
 func _ready():
 	_multiple_stars(num_stars)
-	timer.wait_time = 120
+	timer.wait_time = 60
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
 	power_up.visible = false # starts with false
+	power_up.position = Vector2(randf_range(min_x, max_x), 0)
 
 	
 func _physics_process(delta: float) -> void:
@@ -57,6 +58,11 @@ func _multiple_stars(num_stars):
 
 #visbility of the star(power up)	
 func _on_timer_timeout() -> void:
+	power_up.position = Vector2(randf_range(min_x, max_x), 0)
 	power_up.visible = true
+	
+	await get_tree().create_timer(5).timeout
+	power_up.visible = false
+
 		
 		

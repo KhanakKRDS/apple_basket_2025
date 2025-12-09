@@ -62,7 +62,7 @@ position = Vector2(6.49997, 3)
 shape = SubResource("RectangleShape2D_vio3b")
 
 [node name="Timer" type="Timer" parent="star"]
-wait_time = 120.0
+wait_time = 60.0
 autostart = true
 
 [node name="stone" type="CharacterBody2D" parent="."]
