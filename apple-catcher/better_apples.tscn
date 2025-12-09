@@ -3,18 +3,14 @@
 [ext_resource type="Script" uid="uid://yawfgwt04vwx" path="res://better_basket.gd" id="1_8q4iw"]
 [ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="1_n6xs7"]
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="2_8q4iw"]
-[ext_resource type="Script" uid="uid://k56alnf8dsom" path="res://star.gd" id="3_ba8uk"]
+[ext_resource type="Script" path="res://star.gd" id="3_ba8uk"]
 [ext_resource type="Script" uid="uid://g2dj8qlwhgwc" path="res://better_apple.gd" id="3_glxhr"]
 [ext_resource type="Texture2D" uid="uid://u127ur3hfvbf" path="res://star.png" id="5_mscbv"]
-[ext_resource type="Script" uid="uid://b24ajl4rwcs7j" path="res://stone.gd" id="6_82mcb"]
+[ext_resource type="Script" path="res://stone.gd" id="6_82mcb"]
 [ext_resource type="Texture2D" uid="uid://c7j3dc3f8yh4i" path="res://stone.png" id="6_vio3b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mscbv"]
 radius = 53.15073
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glxhr"]
-radius = 55.96112
-height = 186.13559
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vio3b"]
 size = Vector2(81, 73)
@@ -67,6 +63,15 @@ shape = SubResource("RectangleShape2D_vio3b")
 [node name="Timer" type="Timer" parent="star"]
 wait_time = 30.0
 
+[node name="star_image2" type="Sprite2D" parent="star"]
+position = Vector2(7, 3.5)
+scale = Vector2(0.283333, 0.280556)
+texture = ExtResource("5_mscbv")
+
+[node name="star_collision2" type="CollisionShape2D" parent="star"]
+position = Vector2(6.49997, 3)
+shape = SubResource("RectangleShape2D_vio3b")
+
 [node name="stone" type="CharacterBody2D" parent="."]
 position = Vector2(526, -67)
 script = ExtResource("6_82mcb")
@@ -77,6 +82,15 @@ scale = Vector2(0.104004, 0.133503)
 texture = ExtResource("6_vio3b")
 
 [node name="stone-collision" type="CollisionShape2D" parent="stone"]
+position = Vector2(2, -5)
+shape = SubResource("RectangleShape2D_82mcb")
+
+[node name="stone_image2" type="Sprite2D" parent="stone"]
+position = Vector2(7.62939e-06, -2.86102e-06)
+scale = Vector2(0.104004, 0.133503)
+texture = ExtResource("6_vio3b")
+
+[node name="stone-collision2" type="CollisionShape2D" parent="stone"]
 position = Vector2(2, -5)
 shape = SubResource("RectangleShape2D_82mcb")
 
@@ -94,7 +108,7 @@ position = Vector2(1, 37)
 rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
 
-[node name="score" type="Label" parent="."]
+[node name="score2" type="Label" parent="."]
 offset_right = 115.0
 offset_bottom = 44.0
 theme_override_colors/font_color = Color(0, 0.941176, 0.866667, 1)
@@ -104,28 +118,10 @@ text = " Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="star" type="CharacterBody2D" parent="."]
+[node name="star2" type="CharacterBody2D" parent="."]
 position = Vector2(337, -68)
 
-[node name="star_image" type="Sprite2D" parent="star"]
-position = Vector2(7, 3.5)
-scale = Vector2(0.283333, 0.280556)
-texture = ExtResource("5_mscbv")
-
-[node name="star_collision" type="CollisionShape2D" parent="star"]
-position = Vector2(6.49997, 3)
-shape = SubResource("RectangleShape2D_vio3b")
-
-[node name="stone" type="CharacterBody2D" parent="."]
+[node name="stone2" type="CharacterBody2D" parent="."]
 position = Vector2(526, -67)
-
-[node name="stone_image" type="Sprite2D" parent="stone"]
-position = Vector2(7.62939e-06, -2.86102e-06)
-scale = Vector2(0.104004, 0.133503)
-texture = ExtResource("6_vio3b")
-
-[node name="stone-collision" type="CollisionShape2D" parent="stone"]
-position = Vector2(2, -5)
-shape = SubResource("RectangleShape2D_82mcb")
 
 [connection signal="body_entered" from="basket" to="basket" method="_on_body_entered"]
