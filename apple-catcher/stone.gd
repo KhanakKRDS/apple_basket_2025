@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var min_x = 0 # position of stones
 var max_x = 1152 # position of stones
-var num_stones = 1 #number of stones visible on screen at a time
+var num_stones = 2 #number of stones visible on screen at a time
 var new_stones = [] # stores sll the new stones made
 
 
@@ -11,7 +11,7 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	for stone in new_stones:
-		stone.velocity = Vector2(0, 100) # moves down
+		stone.velocity = Vector2(0, 300) # moves down
 		stone.move_and_slide()
 		
 		#resets the stone to zero if the stone is outside the screen
