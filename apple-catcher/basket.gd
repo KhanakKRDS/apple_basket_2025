@@ -18,3 +18,4 @@ func _on_body_entered(body: Node) -> void:
 	score += 1
 	score_label.text = str(score)
 	
+ 

@@ -55,20 +55,11 @@ theme_override_font_sizes/font_size = 52
 text = "START"
 script = ExtResource("5_076lj")
 
-[node name="credits button" type="Button" parent="."]
-offset_left = 458.0
-offset_top = 427.0
-offset_right = 673.0
-offset_bottom = 508.0
-theme_override_fonts/font = ExtResource("2_pevhg")
-theme_override_font_sizes/font_size = 52
-text = "CREDITS"
-
 [node name="tutorial button" type="Button" parent="."]
 offset_left = 452.0
-offset_top = 523.0
+offset_top = 427.0
 offset_right = 680.0
-offset_bottom = 604.0
+offset_bottom = 508.0
 theme_override_fonts/font = ExtResource("2_pevhg")
 theme_override_font_sizes/font_size = 52
 text = "TUTORIAL"
