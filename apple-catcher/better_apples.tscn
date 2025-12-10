@@ -55,7 +55,7 @@ texture = ExtResource("6_vio3b")
 
 [node name="stone-collision" type="CollisionShape2D" parent="CanvasLayer/stone"]
 position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_ucbje")
+shape = SubResource("CircleShape2D_dp5ro")
 
 [node name="basket" type="Area2D" parent="CanvasLayer"]
 position = Vector2(201, 555)
@@ -92,7 +92,7 @@ texture = ExtResource("5_mscbv")
 
 [node name="star_collision" type="CollisionShape2D" parent="star"]
 position = Vector2(7.0000005, 7)
-shape = SubResource("CircleShape2D_dp5ro")
+shape = SubResource("CircleShape2D_ucbje")
 
 [node name="Timer" type="Timer" parent="star"]
 wait_time = 30.0
@@ -118,7 +118,7 @@ texture = ExtResource("6_vio3b")
 
 [node name="stone-collision" type="CollisionShape2D" parent="stone"]
 position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_ucbje")
+shape = SubResource("CircleShape2D_dp5ro")
 
 [node name="stone_image2" type="Sprite2D" parent="stone"]
 position = Vector2(7.62939e-06, -2.86102e-06)
@@ -127,7 +127,7 @@ texture = ExtResource("6_vio3b")
 
 [node name="stone-collision2" type="CollisionShape2D" parent="stone"]
 position = Vector2(2, -5)
-shape = SubResource("RectangleShape2D_82mcb")
+shape = SubResource("CircleShape2D_dp5ro")
 
 [node name="basket" type="Area2D" parent="."]
 position = Vector2(201, 555)
