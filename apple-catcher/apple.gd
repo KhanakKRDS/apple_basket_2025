@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 		# Decrease score if missed
 		var score = int(score_label.text)
 		score = max(score - 1, 0)  # prevent negative score
-		score_label.text = str(score)
+		score_label.text =("Score: ") str(score)
 
 func reset_apple():
 	position.x = randi_range(0, 1100)
