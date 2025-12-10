@@ -7,7 +7,6 @@ var score_label: Label
 func _ready():
 	score_label = get_node("/root/BetterApples/score")
 
-
 	
 func _process(delta):
 	if Input.is_key_pressed(KEY_LEFT):
@@ -16,9 +15,9 @@ func _process(delta):
 	elif  Input.is_key_pressed(KEY_RIGHT):
 		position.x +=10
 	if Input.is_key_pressed(KEY_D):
-		position.x -= 10
-	if Input.is_key_pressed(KEY_A):
 		position.x += 10
+	if Input.is_key_pressed(KEY_A):
+		position.x -= 10
 
 
 func _on_body_entered(body: Node) -> void:
