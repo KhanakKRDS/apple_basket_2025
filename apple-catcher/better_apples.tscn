@@ -10,13 +10,13 @@
 [ext_resource type="Script" uid="uid://dxcks0p0ilrbb" path="res://basket.gd" id="7_ba8uk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ba8uk"]
-radius = 403.39868
+radius = 254.88332
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vio3b"]
-size = Vector2(81, 73)
+[sub_resource type="CircleShape2D" id="CircleShape2D_dp5ro"]
+radius = 35.850414
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_82mcb"]
-size = Vector2(89, 76)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucbje"]
+radius = 39.56008
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glxhr"]
 radius = 55.96112
@@ -44,7 +44,7 @@ scale = Vector2(0.162109, 0.158203)
 texture = ExtResource("2_8q4iw")
 
 [node name="apple_collision" type="CollisionShape2D" parent="apple"]
-position = Vector2(-5, 14)
+position = Vector2(-4, 9)
 scale = Vector2(0.16210902, 0.158203)
 shape = SubResource("CircleShape2D_ba8uk")
 
@@ -58,11 +58,11 @@ scale = Vector2(0.283333, 0.280556)
 texture = ExtResource("5_mscbv")
 
 [node name="star_collision" type="CollisionShape2D" parent="star"]
-position = Vector2(6.49997, 3)
-shape = SubResource("RectangleShape2D_vio3b")
+position = Vector2(7.0000005, 7)
+shape = SubResource("CircleShape2D_dp5ro")
 
 [node name="Timer" type="Timer" parent="star"]
-wait_time = 60.0
+wait_time = 30.0
 autostart = true
 
 [node name="star_image2" type="Sprite2D" parent="star"]
@@ -84,8 +84,8 @@ scale = Vector2(0.104004, 0.133503)
 texture = ExtResource("6_vio3b")
 
 [node name="stone-collision" type="CollisionShape2D" parent="stone"]
-position = Vector2(2, -5)
-shape = SubResource("RectangleShape2D_82mcb")
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_ucbje")
 
 [node name="stone_image2" type="Sprite2D" parent="stone"]
 position = Vector2(7.62939e-06, -2.86102e-06)
