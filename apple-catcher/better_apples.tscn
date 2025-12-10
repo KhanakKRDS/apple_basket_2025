@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="2_8q4iw"]
 [ext_resource type="Script" uid="uid://k56alnf8dsom" path="res://star.gd" id="3_ba8uk"]
 [ext_resource type="Texture2D" uid="uid://u127ur3hfvbf" path="res://star.png" id="5_mscbv"]
-[ext_resource type="Script" uid="uid://b24ajl4rwcs7j" path="res://stone.gd" id="6_82mcb"]
+[ext_resource type="Script" path="res://stone.gd" id="6_82mcb"]
 [ext_resource type="Texture2D" uid="uid://c7j3dc3f8yh4i" path="res://stone.png" id="6_vio3b"]
 [ext_resource type="Script" uid="uid://dxcks0p0ilrbb" path="res://basket.gd" id="7_ba8uk"]
 
@@ -72,12 +72,12 @@ rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
 
 [node name="score" type="Label" parent="."]
-offset_right = 115.0
+offset_right = 151.0
 offset_bottom = 55.0
 theme_override_colors/font_color = Color(0, 0.941176, 0.866667, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0.945098, 1)
 theme_override_font_sizes/font_size = 40
-text = "0"
+text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 

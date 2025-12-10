@@ -1,0 +1,150 @@
+[gd_scene load_steps=11 format=3 uid="uid://y41j2jm0enf5"]
+
+[ext_resource type="Script" uid="uid://d3ld60h7krcob" path="res://start_screen.gd" id="1_vdywr"]
+[ext_resource type="FontFile" uid="uid://c886uyeo3movt" path="res://Cocana-ExtrudeRight.otf" id="2_cdgt5"]
+[ext_resource type="FontFile" uid="uid://cukpq3oonvk1n" path="res://Howdybun.ttf" id="2_pevhg"]
+[ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="3_l67vj"]
+[ext_resource type="Script" uid="uid://ddoetalup5xb3" path="res://button.gd" id="5_076lj"]
+[ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="6_cdgt5"]
+[ext_resource type="AudioStream" uid="uid://bmf2i0udbaw64" path="res://audio [music].mp3" id="8_076lj"]
+[ext_resource type="Script" uid="uid://bfpjq0qkcfmdg" path="res://canvas_layer.gd" id="9_vvj22"]
+[ext_resource type="Texture2D" uid="uid://cvqv3n1kp5wei" path="res://Arrow_keys-LEFT_RIGHT.webp" id="10_6r8yh"]
+[ext_resource type="Texture2D" uid="uid://cl68ulj60i0oa" path="res://50.png" id="12_owqg3"]
+
+[node name="Start screen" type="Node2D"]
+script = ExtResource("1_vdywr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0.99969536, 0.99969536, 0.99969536, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 116.0
+offset_top = 7.0
+offset_right = 1035.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(1.0006096, 0.12951833, 0.2433095, 1)
+theme_override_fonts/font = ExtResource("2_cdgt5")
+theme_override_font_sizes/font_size = 150
+text = "Apple Catcher"
+
+[node name="Apple" type="Sprite2D" parent="."]
+position = Vector2(583.00006, 260.00003)
+scale = Vector2(0.123046964, 0.14062506)
+texture = ExtResource("3_l67vj")
+
+[node name="Apple2" type="Sprite2D" parent="."]
+position = Vector2(541, 263)
+rotation = -0.8222111
+scale = Vector2(0.11883181, 0.12606475)
+texture = ExtResource("3_l67vj")
+
+[node name="WickerBasket" type="Sprite2D" parent="."]
+position = Vector2(567, 257)
+scale = Vector2(0.2578125, 0.20703131)
+texture = ExtResource("6_cdgt5")
+
+[node name="start button" type="Button" parent="."]
+offset_left = 458.0
+offset_top = 331.0
+offset_right = 673.0
+offset_bottom = 412.0
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 52
+text = "START"
+script = ExtResource("5_076lj")
+
+[node name="tutorial button" type="Button" parent="."]
+offset_left = 452.0
+offset_top = 427.0
+offset_right = 680.0
+offset_bottom = 508.0
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 52
+text = "TUTORIAL"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_076lj")
+autoplay = true
+
+[node name="TutorialPage" type="CanvasLayer" parent="."]
+script = ExtResource("9_vvj22")
+
+[node name="ColorRect" type="ColorRect" parent="TutorialPage"]
+offset_top = -1.0
+offset_right = 1153.0
+offset_bottom = 649.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TutorialPage"]
+offset_left = 279.0
+offset_top = 78.0
+offset_right = 892.0
+offset_bottom = 212.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 100
+text = "HOW TO PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="Apple" type="Sprite2D" parent="TutorialPage"]
+position = Vector2(188.99997, 243.00008)
+rotation = -0.78135383
+scale = Vector2(0.13085938, 0.13867188)
+texture = ExtResource("3_l67vj")
+
+[node name="WickerBasket" type="Sprite2D" parent="TutorialPage"]
+position = Vector2(194.99998, 405.99997)
+scale = Vector2(0.27734375, 0.26367188)
+texture = ExtResource("6_cdgt5")
+
+[node name="Label2" type="Label" parent="TutorialPage"]
+offset_left = 83.0
+offset_top = 484.0
+offset_right = 325.0
+offset_bottom = 533.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Every apple caught is +1 point
+Every apple dropped is -1 point"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="TutorialPage"]
+offset_left = 425.0
+offset_top = 485.0
+offset_right = 750.0
+offset_bottom = 534.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "To move, use the left and right arrow keys"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="TutorialPage"]
+offset_left = 803.0
+offset_top = 486.0
+offset_right = 1128.0
+offset_bottom = 535.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "To win, score a total of 50 points!"
+metadata/_edit_use_anchors_ = true
+
+[node name="ArrowKeysLeftRight" type="Sprite2D" parent="TutorialPage"]
+position = Vector2(582, 409.00003)
+scale = Vector2(0.35333332, 0.32916668)
+texture = ExtResource("10_6r8yh")
+
+[node name="mainmenu" type="Button" parent="TutorialPage"]
+offset_left = 440.0
+offset_top = 211.0
+offset_right = 728.0
+offset_bottom = 290.0
+theme_override_fonts/font = ExtResource("2_pevhg")
+theme_override_font_sizes/font_size = 52
+text = "MAIN MENU"
+metadata/_edit_use_anchors_ = true
+
+[node name="50" type="Sprite2D" parent="TutorialPage"]
+position = Vector2(929, 422)
+texture = ExtResource("12_owqg3")
+
+[connection signal="button_down" from="tutorial button" to="." method="_on_tutorial_button_button_down"]
+[connection signal="button_down" from="TutorialPage/mainmenu" to="." method="_on_mainmenu_button_down"]
