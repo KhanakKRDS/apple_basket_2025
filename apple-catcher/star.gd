@@ -4,7 +4,7 @@ var min_x = 0 # position of stars
 var max_x = 1145 # position of stars
 var num_stars = 1 #number of stars visible on screen at a time
 var new_stars = [] # stores sll the new stars made
-var star = 0
+#var star = 0
 #var power_up = new_stars[0]
 @onready var timer: Timer = $Timer # 30s timer
 #@onready var power_up: Sprite2D = $star_image # power up star
@@ -12,11 +12,13 @@ var star = 0
 
 func _ready():
 	_multiple_stars(num_stars)
-	timer.wait_time = 60
+	timer.wait_time = 30
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
-	star.visible = false # starts with false
-	star.position = Vector2(randf_range(min_x, max_x), 0)
+	
+	for star in new_stars:
+		star.visible = false # starts with false
+		star.position = Vector2(randf_range(min_x, max_x), 0)
 
 	
 func _physics_process(delta: float) -> void:
@@ -59,12 +61,13 @@ func _multiple_stars(num_stars):
 
 #visbility of the star(power up)	add a for loop to make the array of each part visible
 func _on_timer_timeout() -> void:
-	for star in star:
+	for star in new_stars:
 		star.position = Vector2(randf_range(min_x, max_x), 0)
 		print("working")
 		star.visible = true
 		
-		await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(5).timeout
+	for star in new_stars:
 		star.visible = false
 
 		
