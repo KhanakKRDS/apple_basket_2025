@@ -72,7 +72,7 @@ texture = ExtResource("5_mscbv")
 
 [node name="star_collision2" type="CollisionShape2D" parent="star"]
 position = Vector2(6.49997, 3)
-shape = SubResource("RectangleShape2D_vio3b")
+shape = SubResource("CircleShape2D_ucbje")
 
 [node name="stone" type="CharacterBody2D" parent="."]
 position = Vector2(526, -67)
