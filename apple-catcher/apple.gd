@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var score = 0
 var score_label: Label
 
 func _ready():
@@ -18,9 +19,11 @@ func _physics_process(delta: float) -> void:
 	if position.y > 680:
 		reset_apple()
 		# Decrease score if missed
-		var score = int(score_label.text)
 		score = max(score - 1, 0)  # prevent negative score
 		score_label.text =("Score: ") + str(score)
+		var score = int(score_label.text)
+		
+		
 
 func reset_apple():
 	position.x = randi_range(0, 1100)
