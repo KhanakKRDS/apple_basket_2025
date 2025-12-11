@@ -127,7 +127,6 @@ texture = ExtResource("6_vio3b")
 
 [node name="stone-collision2" type="CollisionShape2D" parent="stone"]
 position = Vector2(2, -5)
-shape = SubResource("RectangleShape2D_82mcb")
 
 [node name="basket" type="Area2D" parent="."]
 position = Vector2(201, 555)
