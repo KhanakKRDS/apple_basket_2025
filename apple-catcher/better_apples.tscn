@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c3savlk0yywr4" path="res://apple.gd" id="1_82mcb"]
 [ext_resource type="Texture2D" uid="uid://dc35goqt0fy50" path="res://game_bg.jpg" id="1_dp5ro"]
+[ext_resource type="Script" uid="uid://crrvq335dc0y8" path="res://Global.gd" id="1_dp5ro"]
 [ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="1_n6xs7"]
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="2_8q4iw"]
 [ext_resource type="Script" uid="uid://k56alnf8dsom" path="res://star.gd" id="3_ba8uk"]
@@ -24,6 +25,7 @@ radius = 55.96112
 height = 214.35492
 
 [node name="BetterApples" type="Node2D"]
+script = ExtResource("1_dp5ro")
 
 [node name="GameBg" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.54901963)
