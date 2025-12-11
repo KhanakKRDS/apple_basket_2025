@@ -5,7 +5,7 @@ var score = 0
 var score_label: Label
 
 func _ready():
-	score_label = get_node("/root/BetterApples/score")
+	score_label = get_node("/root/BetterApples/score_bg/score")
 
 	
 func _process(delta):

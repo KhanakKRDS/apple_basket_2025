@@ -20,17 +20,17 @@ func _ready():
 		star.visible = false # starts with false
 		star.position = Vector2(randf_range(min_x, max_x), 0)
 
-	
+
 func _physics_process(delta: float) -> void:
 	for star in new_stars:
 		star.velocity = Vector2(0, 100) # moves down
 		star.move_and_slide()
-		
+
 		#resets the star to zero if the star is outside the screen
 		#if star.position.y >648:
 			#star.position.x = randf_range(min_x, max_x)
 			#star.position.y = 0
-	
+
 func _multiple_stars(num_stars):
 	for i in range(num_stars):
 		#sprite for star image
@@ -39,19 +39,19 @@ func _multiple_stars(num_stars):
 		sprite.texture = preload("res://star.png") #duplicate of this image
 		sprite.scale = Vector2(0.35, 0.35) # size of the star
 		star.add_child(sprite) # adding the new star sprite image as its child of the original star
-		
+
 		#collision layer for each star
 		var shape = CollisionShape2D.new()
 		shape.shape = RectangleShape2D.new()
 		#size of collision shape
 		shape.shape.extents = sprite.texture.get_size() * sprite.scale * 0.5
 		star.add_child(shape)
-		
+
 		#star's position and initial velocity
 		star.position = Vector2(randf_range(min_x, max_x), randf_range(0,600)) 
 		star.visible = false
 		#star.velocity = Vector2(0, 200)
-	
+
 		#add new star to the node scene
 		add_child(star)
 		new_stars.append(star)
@@ -65,10 +65,7 @@ func _on_timer_timeout() -> void:
 		star.position = Vector2(randf_range(min_x, max_x), 0)
 		print("working")
 		star.visible = true
-		
+
 	await get_tree().create_timer(5).timeout
 	for star in new_stars:
 		star.visible = false
-
-		
-		

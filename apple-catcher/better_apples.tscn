@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://e8rfwr6rihsm"]
+[gd_scene load_steps=14 format=3 uid="uid://e8rfwr6rihsm"]
 
 [ext_resource type="Script" uid="uid://c3savlk0yywr4" path="res://apple.gd" id="1_82mcb"]
+[ext_resource type="Texture2D" uid="uid://dc35goqt0fy50" path="res://game_bg.jpg" id="1_dp5ro"]
 [ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="1_n6xs7"]
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="2_8q4iw"]
 [ext_resource type="Script" uid="uid://k56alnf8dsom" path="res://star.gd" id="3_ba8uk"]
@@ -24,9 +25,24 @@ height = 214.35492
 
 [node name="BetterApples" type="Node2D"]
 
-[node name="score" type="Label" parent="."]
-offset_right = 151.0
-offset_bottom = 55.0
+[node name="GameBg" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.54901963)
+position = Vector2(577, 327.25)
+scale = Vector2(1.879085, 1.6105651)
+texture = ExtResource("1_dp5ro")
+
+[node name="score_bg" type="ColorRect" parent="."]
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 209.0
+offset_bottom = 81.0
+
+[node name="score" type="Label" parent="score_bg"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 163.0
+offset_bottom = 62.0
 theme_override_colors/font_color = Color(0, 0.941176, 0.866667, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0.945098, 1)
 theme_override_font_sizes/font_size = 40
@@ -91,6 +107,8 @@ texture = ExtResource("1_n6xs7")
 position = Vector2(1, 37)
 rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
+
+[node name="background" type="Sprite2D" parent="."]
 
 [connection signal="timeout" from="star/Timer" to="star" method="_on_timer_timeout"]
 [connection signal="body_entered" from="basket" to="basket" method="_on_body_entered"]
