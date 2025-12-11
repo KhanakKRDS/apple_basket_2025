@@ -42,7 +42,7 @@ texture = ExtResource("5_mscbv")
 
 [node name="star_collision" type="CollisionShape2D" parent="star"]
 position = Vector2(7.0000005, 7)
-shape = SubResource("CircleShape2D_dp5ro")
+shape = SubResource("CircleShape2D_ucbje")
 
 [node name="Timer" type="Timer" parent="star"]
 wait_time = 30.0
