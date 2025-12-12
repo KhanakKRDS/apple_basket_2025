@@ -21,7 +21,13 @@ func _physics_process(delta: float) -> void:
 		var score = int(score_label.text)
 		score = max(score - 1, 0)  # prevent negative score
 		score_label.text =("Score: ") + str(score)
+		
+		checkforwin(score)
 
 func reset_apple():
 	position.x = randi_range(0, 1100)
 	position.y = 0
+	
+func checkforwin (score: int):
+		if score >= 1:
+			get_tree().change_scene_to_file("res://endscreen.tscn")
