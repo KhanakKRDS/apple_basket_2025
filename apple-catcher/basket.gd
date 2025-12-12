@@ -9,15 +9,21 @@ func _ready():
 
 
 func _process(delta):
+	
 	if Input.is_key_pressed(KEY_LEFT):
-		position.x -= 10
+		if position.x >= 0:
+			position.x -= 10
 	elif Input.is_key_pressed(KEY_RIGHT):
-		position.x += 10
+		if position.x <= 1100:
+			position.x += 10
 
 	if Input.is_key_pressed(KEY_A):
-		position.x -= 10
+		if position.x >= 0:
+			position.x -= 10
 	if Input.is_key_pressed(KEY_D):
-		position.x += 10
+		if position.x <= 1100:
+			position.x += 10
+
 
 func _on_body_entered(body: Node) -> void:
 	
