@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 var score_label: Label
 
+var score
+
 func _ready():
 	velocity = Vector2(0, 300)
 	score_label = get_node("/root/BetterApples/score")
@@ -19,6 +21,9 @@ func reset_apple():
 	position.x = randi_range(0, 1100)
 	position.y = 0
 	
-func checkforwin (score: int):
-		if score >= 1:
-			get_tree().change_scene_to_file("res://endscreen.tscn")
+	if Global.score >= 50:
+		get_tree().change_scene_to_file("res://endscreen.tscn")
+		Global.score = 0
+		
+		
+		
