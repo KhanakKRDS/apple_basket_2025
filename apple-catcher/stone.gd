@@ -18,6 +18,7 @@ func _physics_process(delta: float) -> void:
 		#resets the stone to zero if the stone is outside the screen
 		if stone.position.y >680:
 			stone.position.x = randf_range(min_x, max_x)
+			print(position.x, position.y)
 			stone.position.y = 0
 	
 func _multiple_stones(num_stones):

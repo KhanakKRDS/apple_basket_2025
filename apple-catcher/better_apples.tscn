@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://e8rfwr6rihsm"]
+[gd_scene load_steps=16 format=3 uid="uid://e8rfwr6rihsm"]
 
 [ext_resource type="Script" uid="uid://c3savlk0yywr4" path="res://apple.gd" id="1_82mcb"]
 [ext_resource type="Script" uid="uid://crrvq335dc0y8" path="res://Global.gd" id="1_dp5ro"]

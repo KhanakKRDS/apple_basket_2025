@@ -4,7 +4,7 @@ var score_label: Label
 
 func _ready():
 	velocity = Vector2(0, 300)
-	score_label = get_node("/root/BetterApples/score")
+	score_label = get_node("/root/BetterApples/score_bg/score")
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
