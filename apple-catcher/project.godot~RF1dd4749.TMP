@@ -11,10 +11,6 @@ config_version=5
 [application]
 
 config/name="Apple catcher"
-run/main_scene="uid://y41j2jm0enf5"
+run/main_scene="uid://e8rfwr6rihsm"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Global="*res://Global.gd"

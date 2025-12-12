@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://e8rfwr6rihsm"]
+[gd_scene load_steps=15 format=3 uid="uid://e8rfwr6rihsm"]
 
 [ext_resource type="Script" uid="uid://c3savlk0yywr4" path="res://apple.gd" id="1_82mcb"]
+[ext_resource type="Script" uid="uid://crrvq335dc0y8" path="res://Global.gd" id="1_dp5ro"]
 [ext_resource type="Texture2D" uid="uid://qy5xgg6v3m20" path="res://wicker-basket.png" id="1_n6xs7"]
 [ext_resource type="Texture2D" uid="uid://bbkri0cend5g6" path="res://apple.png" id="2_8q4iw"]
+[ext_resource type="Texture2D" uid="uid://dc35goqt0fy50" path="res://game_bg.jpg" id="2_ucbje"]
 [ext_resource type="Script" uid="uid://k56alnf8dsom" path="res://star.gd" id="3_ba8uk"]
 [ext_resource type="Texture2D" uid="uid://u127ur3hfvbf" path="res://star.png" id="5_mscbv"]
 [ext_resource type="Script" uid="uid://b24ajl4rwcs7j" path="res://stone.gd" id="6_82mcb"]
@@ -16,71 +18,54 @@ radius = 254.88332
 [sub_resource type="CircleShape2D" id="CircleShape2D_dp5ro"]
 radius = 35.850414
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ucbje"]
+radius = 39.56008
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glxhr"]
 radius = 55.96112
 height = 214.35492
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ucbje"]
-radius = 39.56008
-
 [node name="BetterApples" type="Node2D"]
+script = ExtResource("1_dp5ro")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.6862745)
+position = Vector2(573, 323.75)
+scale = Vector2(1.882353, 1.5884521)
+texture = ExtResource("2_ucbje")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
-offset_right = 1154.0
-offset_bottom = 649.0
+[node name="score_bg" type="ColorRect" parent="."]
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 209.0
+offset_bottom = 81.0
 
-[node name="apple" type="CharacterBody2D" parent="CanvasLayer"]
-position = Vector2(182, -62)
-script = ExtResource("1_82mcb")
-
-[node name="apple_image" type="Sprite2D" parent="CanvasLayer/apple"]
-position = Vector2(-2.49998, 5.50002)
-scale = Vector2(0.162109, 0.158203)
-texture = ExtResource("2_8q4iw")
-
-[node name="apple_collision" type="CollisionShape2D" parent="CanvasLayer/apple"]
-position = Vector2(-4, 9)
-scale = Vector2(0.16210902, 0.158203)
-shape = SubResource("CircleShape2D_ba8uk")
-
-[node name="stone" type="CharacterBody2D" parent="CanvasLayer"]
-position = Vector2(526, -67)
-script = ExtResource("6_82mcb")
-
-[node name="stone_image" type="Sprite2D" parent="CanvasLayer/stone"]
-position = Vector2(7.62939e-06, -2.86102e-06)
-scale = Vector2(0.104004, 0.133503)
-texture = ExtResource("6_vio3b")
-
-[node name="stone-collision" type="CollisionShape2D" parent="CanvasLayer/stone"]
-position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_dp5ro")
-
-[node name="basket" type="Area2D" parent="CanvasLayer"]
-position = Vector2(201, 555)
-script = ExtResource("7_ba8uk")
-
-[node name="basket_image" type="Sprite2D" parent="CanvasLayer/basket"]
-position = Vector2(3.12503, 3.87497)
-scale = Vector2(0.445801, 0.343262)
-texture = ExtResource("1_n6xs7")
-
-[node name="basket_collision" type="CollisionShape2D" parent="CanvasLayer/basket"]
-position = Vector2(1, 37)
-rotation = 1.5548762
-shape = SubResource("CapsuleShape2D_glxhr")
-
-[node name="score" type="Label" parent="."]
-offset_right = 151.0
-offset_bottom = 55.0
+[node name="score" type="Label" parent="score_bg"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 7.0
+offset_right = 163.0
+offset_bottom = 62.0
 theme_override_colors/font_color = Color(0, 0.941176, 0.866667, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0.945098, 1)
 theme_override_font_sizes/font_size = 40
 text = "Score: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="apple" type="CharacterBody2D" parent="."]
+position = Vector2(182, -62)
+script = ExtResource("1_82mcb")
+
+[node name="apple_image" type="Sprite2D" parent="apple"]
+position = Vector2(-2.49998, 5.50002)
+scale = Vector2(0.162109, 0.158203)
+texture = ExtResource("2_8q4iw")
+
+[node name="apple_collision" type="CollisionShape2D" parent="apple"]
+position = Vector2(-4, 9)
+scale = Vector2(0.16210902, 0.158203)
+shape = SubResource("CircleShape2D_ba8uk")
 
 [node name="star" type="CharacterBody2D" parent="."]
 position = Vector2(337, -68)
@@ -93,20 +78,11 @@ texture = ExtResource("5_mscbv")
 
 [node name="star_collision" type="CollisionShape2D" parent="star"]
 position = Vector2(7.0000005, 7)
-shape = SubResource("CircleShape2D_ucbje")
+shape = SubResource("CircleShape2D_dp5ro")
 
 [node name="Timer" type="Timer" parent="star"]
 wait_time = 30.0
 autostart = true
-
-[node name="star_image2" type="Sprite2D" parent="star"]
-position = Vector2(7, 3.5)
-scale = Vector2(0.283333, 0.280556)
-texture = ExtResource("5_mscbv")
-
-[node name="star_collision2" type="CollisionShape2D" parent="star"]
-position = Vector2(6.49997, 3)
-shape = SubResource("CircleShape2D_ucbje")
 
 [node name="stone" type="CharacterBody2D" parent="."]
 position = Vector2(526, -67)
@@ -119,16 +95,7 @@ texture = ExtResource("6_vio3b")
 
 [node name="stone-collision" type="CollisionShape2D" parent="stone"]
 position = Vector2(0, -3)
-shape = SubResource("CircleShape2D_dp5ro")
-
-[node name="stone_image2" type="Sprite2D" parent="stone"]
-position = Vector2(7.62939e-06, -2.86102e-06)
-scale = Vector2(0.104004, 0.133503)
-texture = ExtResource("6_vio3b")
-
-[node name="stone-collision2" type="CollisionShape2D" parent="stone"]
-position = Vector2(2, -5)
-shape = SubResource("CircleShape2D_dp5ro")
+shape = SubResource("CircleShape2D_ucbje")
 
 [node name="basket" type="Area2D" parent="."]
 position = Vector2(201, 555)
@@ -149,4 +116,4 @@ stream = ExtResource("9_dp5ro")
 autoplay = true
 
 [connection signal="timeout" from="star/Timer" to="star" method="_on_timer_timeout"]
-[connection signal="body_entered" from="basket" to="CanvasLayer/basket" method="_on_body_entered"]
+[connection signal="body_entered" from="basket" to="basket" method="_on_body_entered"]
