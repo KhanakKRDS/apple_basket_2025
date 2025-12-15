@@ -26,6 +26,9 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node) -> void:
+	
+	$"../AudioStreamPlayer".play()
+
 	if body.has_method("reset_apple"):
 		Global.score += 1                        
 		score_label.text = "Score: " + str(Global.score)
