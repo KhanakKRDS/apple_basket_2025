@@ -10,11 +10,14 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	# Missed apple
-	if position.y > 680:
+	if position.y > 700:
 		reset_apple()
 		Global.score = max(Global.score - 1, 0)
 		score_label.text = "Score: " + str(Global.score)
 
+func update_fall_speed():
+	velocity.y = 300 + Global.score * 5
+	
 func reset_apple():
 	position.x = randi_range(0, 1100)
 	position.y = 0

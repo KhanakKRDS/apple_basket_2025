@@ -23,7 +23,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	for star in new_stars:
-		star.velocity = Vector2(0, 100) # moves down
+		star.velocity = Vector2(0, 300) # moves down
 		star.move_and_slide()
 
 func _multiple_stars(num_stars):
@@ -34,6 +34,7 @@ func _multiple_stars(num_stars):
 		sprite.texture = preload("res://star.png") #duplicate of this image
 		sprite.scale = Vector2(0.35, 0.35) # size of the star
 		star.add_child(sprite) # adding the new star sprite image as its child of the original star
+		star.name = ("Star")
 
 		#collision layer for each star
 		var shape = CollisionShape2D.new()

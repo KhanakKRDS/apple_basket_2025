@@ -22,8 +22,8 @@ radius = 35.850414
 radius = 39.56008
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glxhr"]
-radius = 55.96112
-height = 214.35492
+radius = 34.963745
+height = 154.04419
 
 [node name="BetterApples" type="Node2D"]
 script = ExtResource("1_dp5ro")
@@ -102,12 +102,12 @@ position = Vector2(201, 555)
 script = ExtResource("7_ba8uk")
 
 [node name="basket_image" type="Sprite2D" parent="basket"]
-position = Vector2(3.12503, 3.87497)
-scale = Vector2(0.445801, 0.343262)
+position = Vector2(-28.00001, 36.875008)
+scale = Vector2(0.3242188, 0.21435559)
 texture = ExtResource("1_n6xs7")
 
 [node name="basket_collision" type="CollisionShape2D" parent="basket"]
-position = Vector2(1, 37)
+position = Vector2(-29, 56)
 rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
 
