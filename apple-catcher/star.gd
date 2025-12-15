@@ -26,11 +26,6 @@ func _physics_process(delta: float) -> void:
 		star.velocity = Vector2(0, 100) # moves down
 		star.move_and_slide()
 
-		#resets the star to zero if the star is outside the screen
-		#if star.position.y >648:
-			#star.position.x = randf_range(min_x, max_x)
-			#star.position.y = 0
-
 func _multiple_stars(num_stars):
 	for i in range(num_stars):
 		#sprite for star image

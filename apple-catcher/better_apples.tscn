@@ -120,4 +120,5 @@ autoplay = true
 stream = ExtResource("12_cyftm")
 
 [connection signal="timeout" from="star/Timer" to="star" method="_on_timer_timeout"]
+[connection signal="body_entered" from="basket" to="stone" method="_on_basket_body_entered"]
 [connection signal="body_entered" from="basket" to="basket" method="_on_body_entered"]

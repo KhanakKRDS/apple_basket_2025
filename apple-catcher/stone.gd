@@ -5,6 +5,7 @@ var min_x = 0 # position of stones
 var max_x = 1152 # position of stones
 var num_stones = 3 #number of stones visible on screen at a time
 var new_stones = [] # stores sll the new stones made
+var score = 0
 
 
 func _ready():
@@ -40,9 +41,13 @@ func _multiple_stones(num_stones):
 		stone.position = Vector2(randf_range(min_x, max_x), randf_range(0,600)) 
 		stone.velocity = Vector2(0, 200)
 	
-		#connecting to increase the score
+		#connecting stone and basket
 		add_child(stone)
 		new_stones.append(stone)
 		var basket = get_node("basket")
-		stone.connect("body_entered", Callable(stone, "_on_body_entered"))
 		stone.connect("body_entered", Callable(basket, "_on_body_entered"))
+
+func _on_basket_body_entered(body):
+	if body is CharacterBody2D:
+		score -= 1
+		print("Score decreased: ", score)
