@@ -26,8 +26,17 @@ func _process(delta):
 
 
 func _on_body_entered(body: Node) -> void:
-	
-	$"../AudioStreamPlayer".play()
+	print(body.name,"*")
+	if body.name == "apple":
+		$AudioStreamPlayer_apple.play()
+
+	elif body.name == "stone":
+		$AudioStreamPlayer_stone.play()
+
+	elif body.name == "star":
+		$AudioStreamPlayer_star.play()
+
+		
 
 	if body.has_method("reset_apple"):
 		Global.score += 1                        
