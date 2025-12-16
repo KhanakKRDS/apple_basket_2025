@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var score_label : Label
 var min_x = 0 # position of stars
 var max_x = 1145 # position of stars
 var num_stars = 1 #number of stars visible on screen at a time
@@ -15,6 +15,7 @@ func _ready():
 	timer.wait_time = 30
 	timer.start()
 	timer.timeout.connect(_on_timer_timeout)
+	score_label = get_node("/root/BetterApples/score_bg/score")
 	
 	for star in new_stars:
 		star.visible = false # starts with false
@@ -23,7 +24,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	for star in new_stars:
-		star.velocity = Vector2(0, 100) # moves down
+		star.velocity = Vector2(0, 300) # moves down
 		star.move_and_slide()
 
 func _multiple_stars(num_stars):
@@ -33,7 +34,9 @@ func _multiple_stars(num_stars):
 		var sprite = Sprite2D.new() #making new Sprite2D
 		sprite.texture = preload("res://star.png") #duplicate of this image
 		sprite.scale = Vector2(0.35, 0.35) # size of the star
+		star.name = ("Star")
 		star.add_child(sprite) # adding the new star sprite image as its child of the original star
+		
 
 		#collision layer for each star
 		var shape = CollisionShape2D.new()
@@ -64,3 +67,7 @@ func _on_timer_timeout() -> void:
 	await get_tree().create_timer(5).timeout
 	for star in new_stars:
 		star.visible = false
+func _on_body_Star_entered(body):
+	if body.name == ("Star"):
+		Global.score =+ 5
+		score_label.text = "Score: " + str(Global.score)

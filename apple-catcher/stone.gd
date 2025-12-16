@@ -5,12 +5,12 @@ var min_x = 0 # position of stones
 var max_x = 1152 # position of stones
 var num_stones = 3 #number of stones visible on screen at a time
 var new_stones = [] # stores sll the new stones made
-var score = 0
+var score_label : Label
 
 
 func _ready():
 	_multiple_stones(num_stones)
-	
+	score_label = get_node("/root/BetterApples/score_bg/score")
 func _physics_process(delta: float) -> void:
 	for stone in new_stones:
 		stone.velocity = Vector2(0, 300) # moves down
@@ -28,8 +28,9 @@ func _multiple_stones(num_stones):
 		var stone = CharacterBody2D.new()
 		var sprite = Sprite2D.new()
 		sprite.texture = preload("res://stone.png") 
-		sprite.scale = Vector2(0.104, 0.134) # size of the stone
+		sprite.scale = Vector2(0.104, 0.134) # size of the stone	
 		stone.add_child(sprite) # adding the new stone sprite image as its child of the original stone
+		stone.add_to_group("stones")
 		
 		#collision layer for each stone
 		var shape = CollisionShape2D.new()
@@ -48,6 +49,7 @@ func _multiple_stones(num_stones):
 		stone.connect("body_entered", Callable(basket, "_on_body_entered"))
 
 func _on_basket_body_entered(body):
-	if body is CharacterBody2D:
-		score -= 1
-		print("Score decreased: ", score)
+	
+	if body.is_in_group("stones"):
+		Global.score -= 1
+		score_label.text = "Score: " + str(Global.score)
