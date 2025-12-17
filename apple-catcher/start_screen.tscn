@@ -108,8 +108,10 @@ offset_top = 484.0
 offset_right = 325.0
 offset_bottom = 533.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Every apple caught is +1 point
-Every apple dropped is -1 point"
+text = "Every Apple caught is +1 point
+Every Apple dropped is -1 point
+Every Stone caught is -1 point
+Every Star caught is +5 point"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="TutorialPage"]
