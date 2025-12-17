@@ -92,7 +92,7 @@ text = "HOW TO PLAY"
 metadata/_edit_use_anchors_ = true
 
 [node name="Apple" type="Sprite2D" parent="TutorialPage"]
-position = Vector2(188.99997, 243.00008)
+position = Vector2(184, 282)
 rotation = -0.78135383
 scale = Vector2(0.13085938, 0.13867188)
 texture = ExtResource("3_l67vj")
@@ -109,9 +109,7 @@ offset_right = 325.0
 offset_bottom = 533.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Every Apple caught is +1 point
-Every Apple dropped is -1 point
-Every Stone caught is -1 point
-Every Star caught is +5 point"
+Every Apple dropped is -1 point"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="TutorialPage"]
