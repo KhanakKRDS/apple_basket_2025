@@ -30,10 +30,10 @@ func _on_body_entered(body: Node) -> void:
 	if body.name == "apple":
 		$AudioStreamPlayer_apple.play()
 
-	elif body.name == "stone":
+	if body.is_in_group("stones"):
 		$AudioStreamPlayer_stone.play()
 
-	elif body.name == "star":
+	if body.name == "Star":
 		$AudioStreamPlayer_star.play()
 
 		

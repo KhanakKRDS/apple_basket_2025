@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c7j3dc3f8yh4i" path="res://stone.png" id="6_vio3b"]
 [ext_resource type="Script" uid="uid://dxcks0p0ilrbb" path="res://basket.gd" id="7_ba8uk"]
 [ext_resource type="AudioStream" uid="uid://cudo1ygl8x5c8" path="res://game-start-6104.mp3" id="9_dp5ro"]
-[ext_resource type="AudioStream" uid="uid://cnvv785vwa4ul" path="res://8-bit-video-game-points-version-1-145826.mp3" id="12_cyftm"]
+[ext_resource type="AudioStream" uid="uid://b0rudjpaiokk6" path="res://game-bonus-02-294436.mp3" id="11_ojj4d"]
 [ext_resource type="AudioStream" uid="uid://exc4fglvmuxr" path="res://game-over-arcade-6435.mp3" id="12_ojj4d"]
 [ext_resource type="AudioStream" uid="uid://db6s2e0vfy0cr" path="res://01-power-up-mario.mp3" id="13_3rw3b"]
 
@@ -115,7 +115,7 @@ rotation = 1.5548762
 shape = SubResource("CapsuleShape2D_glxhr")
 
 [node name="AudioStreamPlayer_apple" type="AudioStreamPlayer" parent="basket"]
-stream = ExtResource("12_cyftm")
+stream = ExtResource("11_ojj4d")
 
 [node name="AudioStreamPlayer_stone" type="AudioStreamPlayer" parent="basket"]
 stream = ExtResource("12_ojj4d")
